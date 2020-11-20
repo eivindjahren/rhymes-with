@@ -1,5 +1,12 @@
 def does_rhyme(word1: str, word2: str, length: int = 3) -> bool:
     """
+    :returns: True if word1 and word2 rhymes.
+    """
+    return does_perfectly_rhyme(word1, word2)
+
+
+def does_perfectly_rhyme(word1: str, word2: str, length: int = 3) -> bool:
+    """
     :returns: True iff word1 and word2 has the
         same ending up to length.
     """
