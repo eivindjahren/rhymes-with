@@ -26,6 +26,10 @@ def make_parser(program_name="rhymes_with"):
         action="version",
         version="%(prog)s {version}".format(version=__version__),
     )
+    parser.add_argument(
+        "--verbosity",
+        help="Increase output verbosity",
+    )
     return parser
 
 
@@ -46,7 +50,7 @@ def run_rhymes_with(argv):
     """
     args = parse_args(argv)
     dictionary = read_dictionary_file()
-    rhyming_words = filter_rhymes(args.word, dictionary)
+    rhyming_words = filter_rhymes(args.word, dictionary, args.verbosity)
     for rhyme in rhyming_words:
         print(rhyme)
 
