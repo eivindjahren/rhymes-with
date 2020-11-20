@@ -4,7 +4,7 @@ import sys
 from rhymes_with import __version__
 from rhymes_with.dictionary import read_dictionary_file
 from rhymes_with.rhymes import filter_rhymes
-
+from rhymes_with.sorter import sort_words_by
 
 def make_parser(program_name="rhymes_with"):
     """
@@ -25,6 +25,11 @@ def make_parser(program_name="rhymes_with"):
         "--version",
         action="version",
         version="%(prog)s {version}".format(version=__version__),
+    )
+    parser.add_argument(
+        "--sort",
+        choices=["alphabetically"]
+        help="Sort the output in a different order"
     )
     return parser
 
