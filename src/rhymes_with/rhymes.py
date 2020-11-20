@@ -4,6 +4,11 @@ def does_rhyme(word1: str, word2: str, length: int = 3) -> bool:
         same ending up to length.
     """
     length = min(3, len(word1), len(word2))
+
+    # 'k' does not rhyme with 'book'
+    if length == 1:
+        return word1 == word2
+
     return word1[-length:] == word2[-length:]
 
 
