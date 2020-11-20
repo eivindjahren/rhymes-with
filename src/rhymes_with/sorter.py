@@ -12,6 +12,8 @@ def sort_word_by(words: [str], criteria) -> [str]:
     """
     if criteria == "alphabetically":
         return sorted(words)
+    if criteria == "length":
+        return sorted(words, key=len)
     if criteria == "awesome":
         return sort_by_awesome(words)
     else:
