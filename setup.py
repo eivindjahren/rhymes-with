@@ -15,7 +15,7 @@ setup(
     long_description_content_type="text/markdown",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    install_requires=[],
+    install_requires=["pronouncing"],
     entry_points={
         "console_scripts": [
             "rhymes_with=rhymes_with.__main__:main",

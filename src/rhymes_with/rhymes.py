@@ -1,10 +1,11 @@
-def does_rhyme(word1: str, word2: str, length: int = 3) -> bool:
+import pronouncing
+
+
+def does_rhyme(word1: str, word2: str) -> bool:
     """
-    :returns: True if word1 and word2 has the
-        same ending up to length.
+    :returns: True if word1 and word2 rhymes
     """
-    length = min(3, len(word1), len(word2))
-    return word1[-length:] == word2[-length:]
+    return word1 in pronouncing.rhymes(word2)
 
 
 def filter_rhymes(word: str, dictionary: [str]) -> [str]:
