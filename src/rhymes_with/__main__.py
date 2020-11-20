@@ -6,6 +6,7 @@ from rhymes_with.dictionary import read_dictionary_file
 from rhymes_with.rhymes import filter_rhymes
 from rhymes_with.sorter import sort_words_by
 
+
 def make_parser(program_name="rhymes_with"):
     """
     :param program_name: The name of the executable called.
@@ -28,8 +29,8 @@ def make_parser(program_name="rhymes_with"):
     )
     parser.add_argument(
         "--sort",
-        choices=["alphabetically"]
-        help="Sort the output in a different order"
+        choices=["alphabetically"],
+        help="Sort the output in a different order",
     )
     return parser
 
@@ -52,6 +53,7 @@ def run_rhymes_with(argv):
     args = parse_args(argv)
     dictionary = read_dictionary_file()
     rhyming_words = filter_rhymes(args.word, dictionary)
+
     for rhyme in rhyming_words:
         print(rhyme)
 

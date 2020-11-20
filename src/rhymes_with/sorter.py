@@ -1,10 +1,9 @@
-
-
 def sort_by_awesome(words: [str]) -> [str]:
     if "sloths" in words:
         words.remove("sloths")
         words.insert(0, "sloths")
     return words
+
 
 def sort_word_by(words: [str], criteria) -> [str]:
     """
@@ -17,4 +16,6 @@ def sort_word_by(words: [str], criteria) -> [str]:
     if criteria == "awesome":
         return sort_by_awesome(words)
     else:
-        raise NotImplementedError(f"The sorting criteria: {criteria} has not been implemented")
+        raise NotImplementedError(
+            f"The sorting criteria: {criteria} has not been implemented"
+        )
